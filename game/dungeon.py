@@ -104,15 +104,25 @@ class Dungeon:
         center_y = tile_y * self.tile_size + self.tile_size // 2
         return center_x, center_y
 
-    def draw(self, surface: pygame.Surface) -> None:
+    def random_floor_position_away_from(
+        self, position: tuple[int, int], minimum_distance: float
+    ) -> tuple[int, int]:
+        for _ in range(32):
+            candidate = self.random_floor_position()
+            if pygame.Vector2(candidate).distance_to(position) >= minimum_distance:
+                return candidate
+        return self.random_floor_position()
+
+    def draw(self, surface: pygame.Surface, assets, animation_time: float) -> None:
+        frame = int(animation_time * settings.PICKUP_ANIMATION_FPS) % 2
+        floor_tile = assets.get_tile("floor", frame)
+        wall_tile = assets.get_tile("wall", frame)
         for y_index, row in enumerate(self.tiles):
             for x_index, tile in enumerate(row):
-                color = settings.FLOOR_COLOR if tile == 1 else settings.WALL_COLOR
                 tile_rect = pygame.Rect(
                     x_index * self.tile_size,
                     y_index * self.tile_size,
                     self.tile_size,
                     self.tile_size,
                 )
-                pygame.draw.rect(surface, color, tile_rect)
-                pygame.draw.rect(surface, settings.BACKGROUND_COLOR, tile_rect, 1)
+                surface.blit(floor_tile if tile == 1 else wall_tile, tile_rect)
