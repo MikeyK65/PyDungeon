@@ -1,0 +1,99 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+*.dll
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+*.egg-info/
+.installed.cfg
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Pytest
+.pytest_cache/
+
+# Type checkers
+.mypy_cache/
+.pyre/
+
+# Editors and IDEs
+.vscode/
+.idea/
+
+# Rope project
+.ropeproject
+
+# Environment / secrets
+.env
+.env.*
+local_settings.py
+secrets.json
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+Icon?
+
+# Swap / temp files
+*~
+*.swp
+*.swo
+
+# Build artifacts
+pip-wheel-metadata/
+__pypackages__/
+
+# Misc
+*.pyc
+*.pyo
+
+# Visual Studio
+.vs/
+
+# PyCharm caches
+.cache/
+
+# Ignore compiled game assets (optional)
+# assets/*.pyc
